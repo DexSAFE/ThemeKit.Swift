@@ -46,11 +46,11 @@ extension Color {
 }
 
 extension UIColor {
-    public static let themeYellowD = UIColor(hex: 0xffa800)
-    public static let themeYellowL = UIColor(hex: 0xff8a00)
+    public static let themeYellowD = UIColor(hex: 0x00FFF0) //UIColor(hex: 0xffa800)
+    public static let themeYellowL = UIColor(hex: 0x1B6761) //UIColor(hex: 0xff8a00)
     public static let themeGreenD = UIColor(hex: 0x05c46b)
     public static let themeGreenL = UIColor(hex: 0x04ad5f)
-    public static let themeRedD = UIColor(hex: 0xf43a4f)
+    public static let themeRedD = UIColor(hex: 0xFF4A7A) //UIColor(hex: 0xf43a4f)
     public static let themeRedL = UIColor(hex: 0xff3d43)
     public static let themeBlack = UIColor(hex: 0x000000)
     public static let themeIssykBlue = UIColor(hex: 0x3372FF)
@@ -75,7 +75,7 @@ extension UIColor {
     public static let themeYellow50 = UIColor(hex: 0xffa800, alpha: 0.5)
     public static let themeYellow20 = UIColor(hex: 0xffa800, alpha: 0.2)
     public static let themeGreen50 = UIColor(hex: 0x05c46b, alpha: 0.5)
-    public static let themeRed50 = UIColor(hex: 0xf43a4f, alpha: 0.5)
+    public static let themeRed50 = UIColor(hex: 0xFF4A7A, alpha: 0.5) // UIColor(hex: 0xf43a4f, alpha: 0.5)
     public static let themeLawrencePressedD = UIColor(hex: 0x353842)
     public static let themeLawrencePressedL = UIColor(hex: 0xe3e4e8)
     public static let themeStronbuy = UIColor(hex: 0x1a60ff)
@@ -86,7 +86,7 @@ extension UIColor {
 }
 
 extension UIColor {
-    public static var themeJacob: UIColor { color(dark: .themeYellowD, light: .themeYellowL) }
+    public static var themeJacob: UIColor { color(dark: .themeYellowD, light: .themeYellowD) }
     public static var themeRemus: UIColor { color(dark: .themeGreenD, light: .themeGreenL) }
     public static var themeLucian: UIColor { color(dark: .themeRedD, light: .themeRedL) }
     public static var themeLeah: UIColor { color(dark: .themeSteelLight, light: .themeSteelDark) }
@@ -111,8 +111,8 @@ extension UIColor {
         UIColor { traits in
             switch ThemeManager.shared.themeMode {
             case .dark: return dark
-            case .light: return light
-            case .system: return traits.userInterfaceStyle == .dark ? dark : light
+            case .light: return dark
+            case .system: return traits.userInterfaceStyle == .dark ? dark : dark
             }
         }
     }
